@@ -1,0 +1,15 @@
+# ─────────────────────────────────────
+# netlify.toml（Create React App 示例）
+# ─────────────────────────────────────
+
+[build]
+  # 构建命令：告诉 Netlify 按 npm run build 打包
+  command = "npm run build"
+  # 打包后将从 build 目录里拿静态文件发布
+  publish = "build"
+
+# 所有前端路由都重定向到 index.html，避免子页刷新报 404
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
